@@ -1,0 +1,122 @@
+<html>
+	<head>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>console-log Demo</title>
+		<script src="../platform/platform.js"></script>
+		<link rel="import" href="console-log.html">
+
+		<style>
+			body {
+				height: 100%;
+				margin: 1em;
+				font-family: sans-serief;
+			}
+			
+			h2 {
+				margin-top: 2em;
+			}
+
+			.nav {
+				color: #000;
+				text-decoration: none;
+				border-bottom: 1px dashed #000;
+				display: inline-block;
+				padding: 3px;
+			}
+			.nav:hover {
+				background-color: #DDF;
+			}
+			
+			leaflet-map,
+			geolocation-sample {
+				max-width: 20em;
+				height: 20em;
+				border: 1px solid #aaa;
+			}
+			geolocation-sample {
+				height: 21em;
+			}
+			pre {
+				font-size: large;
+				border: 2px dashed #00A;
+				padding: 0.5em 1em;
+				background-color: #DDD;
+				clear: all;
+			}
+			.i {
+				color: #00D
+			}
+			.a {
+				color: #008;
+			}
+			.v {
+				color: #800;
+			}
+			.c {
+				color: #080;
+			}
+			.rightbuttons {
+				float:right;
+				width: 12em;
+				margin-left: 1em;
+			}
+			.menubutton {
+				display: block;
+				padding: 1em 2em;
+				margin-bottom: 0.3em;
+				border: 1px solid black;
+				text-decoration: none;
+			}
+			
+			.downloadbutton {
+				background-color: #070;
+				color: #FFF;
+			}
+			.apidocbutton {
+				background-color: #E91E63;
+				color: #FFF;
+			}
+			.gitbutton {
+				background-color: #FFF;
+				color: #000;
+			}
+		</style>
+	</head>
+	<body>
+
+<div class="rightbuttons">
+<a class="menubutton apidocbutton" href="https://nhnb.github.io/console-log/doc.html">Documentation</a>
+<a class="menubutton downloadbutton" href="https://github.com/nhnb/console-log/releases/download/v0.0.0/console-log-0.0.0.zip">Download</a>
+<a class="menubutton gitbutton" href="https://github.com/nhnb/console-log/">Github</a>
+</div>
+
+<h1>Demo of console-log</h1>
+
+<p>&lt;console-log&gt; is a simple web-component which provides access to the browser console for logging purposes.</p>
+
+<h2 id="simple">Simple</h2>
+
+<p>After including the typical boilerplate code for polymer, logging a message to the console is as simple as:</p>
+
+<console-log log="Hello World"></console-log>
+
+<pre class="html"><code>
+&lt;<span class="i">script</span> <span class="a">src</span>="<span class="v">../platform/platform.js</span>"&gt;&lt;/<span class="i">script</span>&gt;
+&lt;<span class="i">link</span> <span class="a">rel</span>="<span class="v">import</span>" <span class="a">href</span>="<span class="v">console-log.html</span>"&gt;
+
+&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">Hello world</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+
+</code></pre>
+
+
+
+ 	
+<h2 id="view">Debugging data bindings</h2>
+
+<p>&lt;console-log&gt; is useful to debug data bindings.</p>
+
+
+TODO
+
+	</body>
+</html>
