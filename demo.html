@@ -1,8 +1,9 @@
 <html>
 	<head>
-		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>console-log Demo</title>
 		<script src="../platform/platform.js"></script>
+		<link rel="import" href="../polymer/polymer.html">
 		<link rel="import" href="console-log.html">
 
 		<style>
@@ -104,7 +105,7 @@
 &lt;<span class="i">script</span> <span class="a">src</span>="<span class="v">../platform/platform.js</span>"&gt;&lt;/<span class="i">script</span>&gt;
 &lt;<span class="i">link</span> <span class="a">rel</span>="<span class="v">import</span>" <span class="a">href</span>="<span class="v">console-log.html</span>"&gt;
 
-&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">Hello world</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+<b>&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">Hello world</span>"&gt; &lt;/<span class="i">console-log</span>&gt;</b>
 
 </code></pre>
 
@@ -116,7 +117,38 @@
 <p>&lt;console-log&gt; is useful to debug data bindings.</p>
 
 
-TODO
+<polymer-element name="sample-component" noscript>
+	<template>
+
+		<template repeat="{{i in [1, 2, 3]}}">
+			<console-log log="Counter: {{i}}"> </console-log>
+		</template>
+
+	</template>
+</polymer-element>
+
+
+<sample-component></sample-component>
+
+
+<pre class="html"><code>
+<span class="c">&lt;-- define sample-component --&gt;</span>
+&lt;<span class="i">polymer-element</span> <span class="a">name</span>="<span class="v">sample-component</span>" <span class="a">noscript</span>&gt;
+  &lt;<span class="i">template</span>&gt;
+
+    <span class="c">&lt;-- a simple template loop --&gt;</span>
+    &lt;<span class="i">template</span> <span class="a">repeat</span>="<span class="v">{{i in [1, 2, 3]}}</span>"&gt;
+
+      <b>&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">Counter: {{i}}</span>"&gt; &lt;/<span class="i">console-log</span>&gt;</b>
+      
+    &lt;/<span class="i">template</span>&gt;
+  &lt;/<span class="i">template</span>&gt;
+&lt;/<span class="i">polymer-element</span>&gt;
+
+<span class="c">&lt;-- use our component --&gt;</span>
+&lt;<span class="i">sample-component</span>&gt; &lt;/<span class="i">sample-component/span>&gt;
+
+</code></pre>
 
 	</body>
 </html>
