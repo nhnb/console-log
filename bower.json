@@ -8,7 +8,7 @@
   "description": "Web-component for logging",
   "main": "console-log.html",
   "keywords": [
-    "web-component",
+    "web-components",
     "polymer",
     "console",
     "logging",
