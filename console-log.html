@@ -1,0 +1,41 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!--
+console-log logs to the browser console.
+
+
+
+@element console-log 
+@blurb element which logs to the console 
+@status beta
+@homepage https://nhnb.github.io/console-log/
+-->
+<polymer-element name="console-log" attributes="log">
+
+	<template>
+		<style>    
+			::host {
+			display: none
+		}
+		</style>
+	</template>
+
+	<script>
+		"use strict";
+		Polymer("console-log", {
+			/**
+			 * Setting the `log` attribute will log a message to the console.   
+			 * 
+			 * @attribute log
+			 * @type string
+			 */
+			log: "",
+	
+			logChanged: function(oldValue, newValue) {
+				if (console && console.log) {
+					console.log(newValue);
+				}
+			}
+		});
+	</script>
+</polymer-element>
