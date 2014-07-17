@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
+=======
+	<classpathentry excluding="bower_components/" kind="src" path=""/>
+>>>>>>> d8837a6b2e8e0541bf75103b276d9eed56a5191f
 	<classpathentry kind="output" path=""/>
 </classpath>
