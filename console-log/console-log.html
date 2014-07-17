@@ -3,14 +3,12 @@
 <!--
 console-log logs to the browser console.
 
-
-
 @element console-log 
 @blurb element which logs to the console 
 @status beta
 @homepage https://nhnb.github.io/console-log/
 -->
-<polymer-element name="console-log" attributes="log">
+<polymer-element name="console-log" attributes="log info warn error">
 
 	<template>
 		<style>    
@@ -23,6 +21,23 @@ console-log logs to the browser console.
 	<script>
 		"use strict";
 		Polymer("console-log", {
+
+			/**
+			 * Setting the `error` attribute will log an error message to the console.   
+			 * 
+			 * @attribute error
+			 * @type string
+			 */
+			error: "",
+
+			/**
+			 * Setting the `info` attribute will log an info message to the console.   
+			 * 
+			 * @attribute info
+			 * @type string
+			 */
+			info: "",
+
 			/**
 			 * Setting the `log` attribute will log a message to the console.   
 			 * 
@@ -30,12 +45,38 @@ console-log logs to the browser console.
 			 * @type string
 			 */
 			log: "",
-	
+
+			/**
+			 * Setting the `warn` attribute will log a warn message to the console.   
+			 * 
+			 * @attribute warn
+			 * @type string
+			 */
+			warn: "",
+
+			errorChanged: function(oldValue, newValue) {
+				if (console && console.log) {
+					console.error(newValue);
+				}
+			},
+
+			infoChanged: function(oldValue, newValue) {
+				if (console && console.log) {
+					console.info(newValue);
+				}
+			},
+
 			logChanged: function(oldValue, newValue) {
 				if (console && console.log) {
 					console.log(newValue);
 				}
-			}
+			},
+
+			warnChanged: function(oldValue, newValue) {
+				if (console && console.log) {
+					console.warn(newValue);
+				}
+			},
 		});
 	</script>
 </polymer-element>

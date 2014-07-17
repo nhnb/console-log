@@ -12,7 +12,7 @@
 				margin: 1em;
 				font-family: sans-serif;
 			}
-			
+
 			h2 {
 				margin-top: 2em;
 			}
@@ -48,7 +48,7 @@
 				border: 1px solid black;
 				text-decoration: none;
 			}
-			
+
 			.downloadbutton {
 				background-color: #070;
 				color: #FFF;
@@ -67,7 +67,7 @@
 
 <div class="rightbuttons">
 <a class="menubutton apidocbutton" href="https://nhnb.github.io/console-log/doc.html">Documentation</a>
-<a class="menubutton downloadbutton" href="https://github.com/nhnb/console-log/releases/download/v0.0.0/console-log-1.0.0.zip">Download</a>
+<a class="menubutton downloadbutton" href="https://github.com/nhnb/console-log/releases/download/v1.0.0/console-log-1.0.0.zip">Download</a>
 <a class="menubutton gitbutton" href="https://github.com/nhnb/console-log/">Github</a>
 </div>
 
@@ -91,7 +91,7 @@
 
 
 
- 	
+
 <h2 id="view">Debugging data bindings</h2>
 
 <p>&lt;console-log&gt; is useful to debug data bindings.</p>
@@ -120,7 +120,7 @@
     &lt;<span class="i">template</span> <span class="a">repeat</span>="<span class="v">{{i in [1, 2, 3]}}</span>"&gt;
 
       <b>&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">Counter: {{i}}</span>"&gt; &lt;/<span class="i">console-log</span>&gt;</b>
-      
+
     &lt;/<span class="i">template</span>&gt;
   &lt;/<span class="i">template</span>&gt;
 &lt;/<span class="i">polymer-element</span>&gt;
@@ -129,6 +129,26 @@
 &lt;<span class="i">sample-component</span>&gt; &lt;/<span class="i">sample-component/span>&gt;
 
 </code></pre>
+
+<h2>Log levels</h2>
+
+
+<p>After including the typical boilerplate code for polymer, logging a message to the console is as simple as:</p>
+
+<console-log log="log"></console-log>
+<console-log info="info"></console-log>
+<console-log warn="warn"></console-log>
+<console-log error="error"></console-log>
+
+<pre class="html"><code>
+&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">log</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+&lt;<span class="i">console-log</span> <span class="a">info</span>="<span class="v">info</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+&lt;<span class="i">console-log</span> <span class="a">warn</span>="<span class="v">warn</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+&lt;<span class="i">console-log</span> <span class="a">error</span>="<span class="v">error</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+
+</code></pre>
+
+
 
 	</body>
 </html>

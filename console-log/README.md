@@ -19,4 +19,10 @@ Complex objects:
     <template repeat="{{element in list}}">
         <console-log log="{{element}}"> </console-log>
     </template>
-    
+
+Log levels:
+
+    <console-log log="log"></console-log>
+    <console-log info="info"></console-log>
+    <console-log warn="warn"></console-log>
+    <console-log error="error"></console-log>
