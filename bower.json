@@ -1,0 +1,28 @@
+{
+  "name": "console-log",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nhnb/console-log",
+  "authors": [
+    "Hendrik Brummermann <nhnb@users.sourceforge.net>"
+  ],
+  "description": "Web-component for logging",
+  "main": "console-log.html",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "console",
+    "logging",
+    "debugging"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.3.3"
+  }
+}
