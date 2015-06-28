@@ -8,7 +8,7 @@ console-log logs to the browser console.
 @status beta
 @homepage https://nhnb.github.io/console-log/
 -->
-<polymer-element name="console-log" attributes="log info warn error">
+<dom-module id="console-log" attributes="log info warn error">
 
 	<template>
 		<style>    
@@ -17,10 +17,14 @@ console-log logs to the browser console.
 		}
 		</style>
 	</template>
+</dom-module>
 
-	<script>
-		"use strict";
-		Polymer("console-log", {
+<script>
+	"use strict";
+	Polymer({
+		is: "console-log",
+
+		properties: {
 
 			/**
 			 * Setting the `error` attribute will log an error message to the console.   
@@ -28,7 +32,10 @@ console-log logs to the browser console.
 			 * @attribute error
 			 * @type string
 			 */
-			error: "",
+			error: {
+				type: String,
+				observer: '_errorChanged'
+			},
 
 			/**
 			 * Setting the `info` attribute will log an info message to the console.   
@@ -36,7 +43,10 @@ console-log logs to the browser console.
 			 * @attribute info
 			 * @type string
 			 */
-			info: "",
+			info: {
+				type: String,
+				observer: '_infoChanged'
+			},
 
 			/**
 			 * Setting the `log` attribute will log a message to the console.   
@@ -44,7 +54,10 @@ console-log logs to the browser console.
 			 * @attribute log
 			 * @type string
 			 */
-			log: "",
+			log: {
+				type: String,
+				observer: '_logChanged'
+			},
 
 			/**
 			 * Setting the `warn` attribute will log a warn message to the console.   
@@ -52,31 +65,34 @@ console-log logs to the browser console.
 			 * @attribute warn
 			 * @type string
 			 */
-			warn: "",
+			warn: {
+				type: String,
+				observer: '_warnChanged'
+			}
+		},
 
-			errorChanged: function(oldValue, newValue) {
-				if (console && console.log) {
-					console.error(newValue);
-				}
-			},
+		_errorChanged: function(newValue, oldValue) {
+			if (console && console.error) {
+				console.error(newValue);
+			}
+		},
 
-			infoChanged: function(oldValue, newValue) {
-				if (console && console.log) {
-					console.info(newValue);
-				}
-			},
+		_infoChanged: function(newValue, oldValue) {
+			if (console && console.info) {
+				console.info(newValue);
+			}
+		},
 
-			logChanged: function(oldValue, newValue) {
-				if (console && console.log) {
-					console.log(newValue);
-				}
-			},
+		_logChanged: function(newValue, oldValue) {
+			if (console && console.log) {
+				console.log(newValue);
+			}
+		},
 
-			warnChanged: function(oldValue, newValue) {
-				if (console && console.log) {
-					console.warn(newValue);
-				}
-			},
-		});
-	</script>
-</polymer-element>
+		_warnChanged: function(newValue, oldValue) {
+			if (console && console.log) {
+				console.warn(newValue);
+			}
+		},
+	});
+</script>

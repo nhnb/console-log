@@ -1,7 +1,7 @@
 console-log
 ===========
 
-Web-component for logging. It is especially useful to debug data binds. It supports both simple strings and complex JavaScript objects, which can be inspected in the console window.
+Web-component for logging. It is especially useful to debug data binds. It supports both simple strings and complex objects, which can be inspected in the console window.
 
 ## Demo
 
@@ -16,8 +16,8 @@ Hello world:
 
 Complex objects:
     
-    <template repeat="{{element in list}}">
-        <console-log log="{{element}}"> </console-log>
+    <template is="dom-repeat" items='["Bob", "Sally"]'>
+        <console-log log="{{item}}"> </console-log>
     </template>
 
 Log levels:
