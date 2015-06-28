@@ -2,7 +2,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>console-log Demo</title>
-		<script src="../platform/platform.js"></script>
+		<script type="text/javascript" src="../webcomponentsjs/webcomponents-lite.min.js"></script>
 		<link rel="import" href="../polymer/polymer.html">
 		<link rel="import" href="console-log.html">
 
@@ -66,8 +66,7 @@
 	<body>
 
 <div class="rightbuttons">
-<a class="menubutton apidocbutton" href="https://nhnb.github.io/console-log/doc.html">Documentation</a>
-<a class="menubutton downloadbutton" href="https://github.com/nhnb/console-log/releases/download/v1.0.0/console-log-1.0.0.zip">Download</a>
+<a class="menubutton downloadbutton" href="https://github.com/nhnb/console-log/releases/download/v1.1.0/console-log-1.1.0.zip">Download</a>
 <a class="menubutton gitbutton" href="https://github.com/nhnb/console-log/">Github</a>
 </div>
 
@@ -82,7 +81,7 @@
 <console-log log="Hello World"></console-log>
 
 <pre class="html"><code>
-&lt;<span class="i">script</span> <span class="a">src</span>="<span class="v">../platform/platform.js</span>"&gt;&lt;/<span class="i">script</span>&gt;
+&lt;<span class="i">script</span> <span class="a">src</span>="<span class="v">../webcomponentsjs/webcomponents-lite.min.js</span>"&gt;&lt;/<span class="i">script</span>&gt;
 &lt;<span class="i">link</span> <span class="a">rel</span>="<span class="v">import</span>" <span class="a">href</span>="<span class="v">console-log.html</span>"&gt;
 
 <b>&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">Hello world</span>"&gt; &lt;/<span class="i">console-log</span>&gt;</b>
@@ -90,61 +89,39 @@
 </code></pre>
 
 
-
-
 <h2 id="view">Debugging data bindings</h2>
 
 <p>&lt;console-log&gt; is useful to debug data bindings.</p>
 
 
-<polymer-element name="sample-component" noscript>
-	<template>
-
-		<template repeat="{{i in [1, 2, 3]}}">
-			<console-log log="Counter: {{i}}"> </console-log>
-		</template>
-
-	</template>
-</polymer-element>
-
-
-<sample-component></sample-component>
+<template is="dom-repeat" items='["Bob", "Sally"]'>
+	<console-log log="{{item}}"> </console-log>
+</template>
 
 
 <pre class="html"><code>
-<span class="c">&lt;-- define sample-component --&gt;</span>
-&lt;<span class="i">polymer-element</span> <span class="a">name</span>="<span class="v">sample-component</span>" <span class="a">noscript</span>&gt;
-  &lt;<span class="i">template</span>&gt;
-
-    <span class="c">&lt;-- a simple template loop --&gt;</span>
-    &lt;<span class="i">template</span> <span class="a">repeat</span>="<span class="v">{{i in [1, 2, 3]}}</span>"&gt;
-
-      <b>&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">Counter: {{i}}</span>"&gt; &lt;/<span class="i">console-log</span>&gt;</b>
-
-    &lt;/<span class="i">template</span>&gt;
-  &lt;/<span class="i">template</span>&gt;
-&lt;/<span class="i">polymer-element</span>&gt;
-
-<span class="c">&lt;-- use our component --&gt;</span>
-&lt;<span class="i">sample-component</span>&gt; &lt;/<span class="i">sample-component/span>&gt;
-
+&lt;<span class="i">template</span> <span class="a">is</span>="<span class="v">dom-repeat</span>" <span class="a">items</span>='<span class="v">["Bob", "Sally"]</span>'&gt;
+   <b>&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">{{item}}</span>"&gt; &lt;/<span class="i">console-log</span>&gt;</b>
+&lt;/<span class="i">template</span>&gt;
 </code></pre>
+
+
 
 <h2>Log levels</h2>
 
 
 <p>After including the typical boilerplate code for polymer, logging a message to the console is as simple as:</p>
 
-<console-log log="log"></console-log>
-<console-log info="info"></console-log>
-<console-log warn="warn"></console-log>
-<console-log error="error"></console-log>
+<console-log log="debug message"></console-log>
+<console-log info="info message"></console-log>
+<console-log warn="warn message"></console-log>
+<console-log error="error message"></console-log>
 
 <pre class="html"><code>
-&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">log</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
-&lt;<span class="i">console-log</span> <span class="a">info</span>="<span class="v">info</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
-&lt;<span class="i">console-log</span> <span class="a">warn</span>="<span class="v">warn</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
-&lt;<span class="i">console-log</span> <span class="a">error</span>="<span class="v">error</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+&lt;<span class="i">console-log</span> <span class="a">log</span>="<span class="v">log message</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+&lt;<span class="i">console-log</span> <span class="a">info</span>="<span class="v">info message</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+&lt;<span class="i">console-log</span> <span class="a">warn</span>="<span class="v">warn message</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
+&lt;<span class="i">console-log</span> <span class="a">error</span>="<span class="v">error message</span>"&gt; &lt;/<span class="i">console-log</span>&gt;
 
 </code></pre>
 
